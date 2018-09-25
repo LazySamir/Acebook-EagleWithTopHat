@@ -1,0 +1,19 @@
+language: ruby
+
+rvm:
+  - 2.5.0
+
+env:
+  - DB=postgresql
+
+services:
+  - postgresql
+
+before_script:
+    - cp config/database.yml.travis config/database.yml
+
+script:
+  - bundle install
+  - bin/rails db:create
+  - bin/rails db:migrate
+  - bundle exec rspec 
