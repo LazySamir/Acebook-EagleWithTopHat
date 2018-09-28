@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature "Timeline", type: :feature do
-  scenario "Posts appear with newest post first" do
+  pending "Posts appear with newest post first" do
     visit "/posts"
     click_link "New post"
     fill_in "Message", with: "Older Post"
