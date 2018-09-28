@@ -56,7 +56,7 @@ Rails.application.configure do
 
 
   # Defining default url options
-  config.action_mailer.default_url_options = { host: https://acebook-eaglewithtophat.herokuapp.com/}
+  config.action_mailer.default_url_options = { host: 'acebook-eaglewithtophat.herokuapp.com' }
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
