@@ -1,6 +1,7 @@
 <% @posts.reverse.each do |post| %>
   <p><%= simple_format(post.message) %></p>
   <p><%= post.convert_time %></p>
+  <p><%= @users.find_by(id: post.user_id).full_name %></p>
 <% end %>
 
 <%= link_to new_post_path do %>
