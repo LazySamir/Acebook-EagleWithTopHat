@@ -10,6 +10,8 @@ require 'features/feature_helper_spec.rb'
 
 require 'devise'
 
+Rails.application.load_seed
+
 RSpec.configure do |config| 
   config.include Devise::Test::ControllerHelpers, :type => :controller
 end
