@@ -1,7 +1,9 @@
 require 'rails_helper'
 
 RSpec.feature "Timeline", type: :feature do
-  pending "Posts can have new lines" do
+  scenario "Posts can have new lines" do
+    user_sign_up
+    user_sign_in
     visit '/posts/new'
     fill_in 'Message', with: 'Post with \n new line?'
     click_button 'Submit'

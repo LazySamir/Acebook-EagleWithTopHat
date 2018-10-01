@@ -1,5 +1,6 @@
 <% @posts.reverse.each do |post| %>
   <p><%= simple_format(post.message) %></p>
+  <p><%= @users.find_by(id: post.user_id).full_name %></p>
   <p><%= post.convert_time %></p>
 
   <p><%= @users.find_by(id: post.user_id).full_name %></p>
@@ -24,6 +25,7 @@
     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
     <button>Like</button>
   </form>
+  
 <% end %>
 
 <%= link_to new_post_path do %>

@@ -1,8 +1,9 @@
 require 'rails_helper'
 
 RSpec.feature "Timeline", type: :feature do
-  pending "Can submit posts and view them" do
-    visit "/posts"
+  scenario "Can submit posts and view them" do
+    user_sign_up
+    user_sign_in
     click_link "New post"
     fill_in "Message", with: "Hello, world!"
     click_button "Submit"
