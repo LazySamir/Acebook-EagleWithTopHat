@@ -1,7 +1,11 @@
 require 'simplecov'
 require 'simplecov-console'
 SimpleCov.formatter = SimpleCov::Formatter::Console
-SimpleCov.start 'rails'
+SimpleCov.start 'rails' do
+  add_filter "app/channels/application_cable/"
+  add_filter "app/jobs/"
+  add_filter "app/mailers/"
+end
 
 
 
