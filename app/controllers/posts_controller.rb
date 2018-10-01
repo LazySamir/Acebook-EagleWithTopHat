@@ -14,6 +14,7 @@ class PostsController < ApplicationController
     @posts = Post.all
     @users = User.all
     @comment = Comment.all
+    @likes = Like.all
   end
 
   private
