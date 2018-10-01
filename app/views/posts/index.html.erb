@@ -1,6 +1,10 @@
 <% @posts.reverse.each do |post| %>
   <p><%= simple_format(post.message) %></p>
   <p><%= post.convert_time %></p>
+  <form action="/posts/<%= post.id %>/likes" method="post">
+    <button>Like</button>
+  </form>
+  <!-- <p><%=  %>like</p> -->
   <%# <p><%= @users.find_by(id: post.user_id).full_name %></p> %>
 <% end %>
 
