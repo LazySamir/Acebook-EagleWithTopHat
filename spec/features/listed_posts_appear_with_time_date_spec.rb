@@ -1,8 +1,9 @@
 require 'rails_helper'
 
 RSpec.feature "Timeline", type: :feature do
-  pending "Posts appear with time and the date created" do
-    visit "/posts"
+  scenario "Posts appear with time and the date created" do
+    user_sign_up
+    user_sign_in
     click_link "New post"
     fill_in "Message", with: "Test Post"
     click_button "Submit"
