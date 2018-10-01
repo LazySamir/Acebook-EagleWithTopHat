@@ -1,12 +1,12 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
-  
+
   def new
     @post = Post.new
   end
 
   def create
-    @post = Post.create(post_params)
+    @post = Post.create(message: post_params[:message], user_id: current_user.id)
     redirect_to posts_url
   end
 
@@ -14,7 +14,6 @@ class PostsController < ApplicationController
     @posts = Post.all
     @users = User.all
   end
-
 
   private
 
