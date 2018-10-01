@@ -1,7 +1,23 @@
 <% @posts.reverse.each do |post| %>
   <p><%= simple_format(post.message) %></p>
   <p><%= post.convert_time %></p>
-  <p><%= @users.find_by(id: post.user_id).full_name %></p>
+  
+  <% like_num = 0 %>
+  <% @likes.each do |like| %>
+    <% if like.post_id == post.id %>
+      <% like_num += 1 %>
+    <% end %>
+  <% end %>
+
+    <% unless like_num == 0 %>
+    <p><%= like_num %> like<% if like_num > 1 %>s<% end %></p>
+    <% end %>
+  
+  <form action="/posts/<%= post.id %>/likes" method="post">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <button>Like</button>
+  </form>
+  <%# <p><%= @users.find_by(id: post.user_id).full_name %></p>
 <% end %>
 
 <%= link_to new_post_path do %>
