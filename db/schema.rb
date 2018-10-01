@@ -16,13 +16,13 @@ ActiveRecord::Schema.define(version: 20180927112421) do
   enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
-    t.bigint "users_id"
-    t.bigint "posts_id"
+    t.bigint "user_id"
+    t.bigint "post_id"
     t.string "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["posts_id"], name: "index_comments_on_posts_id"
-    t.index ["users_id"], name: "index_comments_on_users_id"
+    t.index ["post_id"], name: "index_comments_on_post_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "liked_posts", force: :cascade do |t|
@@ -53,8 +53,8 @@ ActiveRecord::Schema.define(version: 20180927112421) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "comments", "posts", column: "posts_id"
-  add_foreign_key "comments", "users", column: "users_id"
+  add_foreign_key "comments", "posts"
+  add_foreign_key "comments", "users"
   add_foreign_key "liked_posts", "posts"
   add_foreign_key "liked_posts", "users"
   add_foreign_key "posts", "users"
