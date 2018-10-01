@@ -1,6 +1,6 @@
-<%= form_for @comment do |form| %>
-  <%= form.label :message %>
-  <%= form.text_area :message %>
-
-  <%= form.submit "Submit" %>
-<% end %>
+<form action="/posts/<%= @post_id %>/comments" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <label for="message"></label>
+  <textarea name="message" rows="8" cols="80"></textarea>
+  <button>Submit</button>
+</form>

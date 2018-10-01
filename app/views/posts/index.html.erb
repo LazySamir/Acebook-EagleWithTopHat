@@ -2,6 +2,13 @@
   <p><%= simple_format(post.message) %></p>
   <p><%= @users.find_by(id: post.user_id).full_name %></p>
   <p><%= post.convert_time %></p>
+
+  <p><%= @users.find_by(id: post.user_id).full_name %></p>
+
+  <form action="/posts/<%= post.id %>/comments/new" method="get">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <button>New Comment</button>
+  </form>
   
   <% like_num = 0 %>
   <% @likes.each do |like| %>
