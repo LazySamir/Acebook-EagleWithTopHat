@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "Timeline", type: :feature do
 
-  scenario "Posts appear with user comments" do
+  pending "Posts appear with user comments" do
 
     before :each do
       visit "/users/sign_up"
