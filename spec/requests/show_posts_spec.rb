@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "Acebook posts API", type: :request do
 
+# @request.env["devise.mapping"] = Devise.mappings[:user]
   # before(:each) do
   #   user = User.create(full_name: "Test Name", email: "123@abc.com", password: "123456")
   # end
