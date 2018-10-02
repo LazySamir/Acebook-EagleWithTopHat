@@ -9,9 +9,9 @@ Bundler.require(*Rails.groups)
 module Acebook
   class Application < Rails::Application
     config.api_only = true
-    config.middleware.use Rack::MethodOverride
+    # config.middleware.use Rack::MethodOverride
     # config.middleware.delete ::Rack::Sendfile
-    
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
 

@@ -1,12 +1,15 @@
 class ApplicationController < ActionController::API
-  protect_from_forgery with: :exception
+  # protect_from_forgery with: :exception
 
-  before_action :configure_permitted_parameters, if: :devise_controller?
+  # before_action :configure_permitted_parameters, if: :devise_controller?
 
-  protected
+  include Response
+  
 
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:full_name])
-  end
+  # protected
+
+  # def configure_permitted_parameters
+  #   devise_parameter_sanitizer.permit(:sign_up, keys: [:full_name])
+  # end
 
 end
