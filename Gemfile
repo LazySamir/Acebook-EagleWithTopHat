@@ -44,6 +44,7 @@ group :development, :test do
   gem 'simplecov'
   gem 'simplecov-console'
   gem 'launchy'
+  gem 'dotenv-rails'
 end
 
 group :development do
