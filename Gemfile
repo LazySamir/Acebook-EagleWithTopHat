@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'rubocop', '~> 0.59.2', require: false
 
 gem 'rack-cors'
+gem 'devise-jwt'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
