@@ -10,10 +10,6 @@ RSpec.describe "Acebook posts API", type: :request do
     before { get '/posts' }
     # get :index, params: {}
 
-    it "returns JSON of all posts" do
-      # return JSON test
-    end
-
     it "returns http status :200" do
       # get :index, params: {}
       expect(response).to have_http_status(200) # :okay
@@ -26,19 +22,17 @@ RSpec.describe "Acebook posts API", type: :request do
 
   describe 'POST /posts' do
     # before { post '/posts' }
-
     it "returns http status :201" do
-      # post "/posts", {:params => { :message => "this is my first post", :user_id => 1}}
-
-      # expect(response).to have_http_status(:created) # :201
-
-
-    # post :create, params: {message: "this is my second post"}
-
-
+    # post "/posts", {:params => { :message => "this is my first post", :user_id => 1}}
+    # expect(response).to have_http_status(:created) # :201
+    # post :create, params: {message: "this is my second post"
     # expect(response).to have_http_status(:created)
-
     end
   end
 
 end
+
+
+    # it "returns JSON of all posts" do
+    #   # return JSON test
+    # end
