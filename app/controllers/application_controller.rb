@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::API
-  protect_from_forgery with: :exception
-  before_action :configure_permitted_parameters, if: :devise_controller?
+  # protect_from_forgery with: :exception
+  # before_action :configure_permitted_parameters, if: :devise_controller?
 
   include Response
 
@@ -12,7 +12,7 @@ class ApplicationController < ActionController::API
     end 
   end
   
-  def validation_error(resource)
+  def validation_error(resource) 
     render json: {
       errors: [
         {
@@ -23,7 +23,6 @@ class ApplicationController < ActionController::API
         }
       ]
     }, status: :bad_request
-    end
   end
 
 
