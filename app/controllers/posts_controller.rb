@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(message: post_params[:message])
+    @post = Post.create(message: post_params[:message], user_id: post_params[:user_id])
     render json: @post
   end
 
@@ -18,6 +18,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:message)
+    params.require(:post).permit(:message, :user_id)
   end
 end
