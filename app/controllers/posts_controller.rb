@@ -4,7 +4,8 @@ class PostsController < ApplicationController
     @post = post
   end
 
-  def create(post = Post.create(message: post_params[:message], user_id: post_params[:user_id]))
+  def create(post = Post.create(message: post_params[:message],
+                                user_id: post_params[:user_id]))
     @post = post
     render json: @post
   end
