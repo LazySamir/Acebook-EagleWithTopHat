@@ -1,8 +1,11 @@
-# Acebook
+# Acebook - API
 
 [![Waffle.io - Columns and their card count](https://badge.waffle.io/LazySamir/Acebook-EagleWithTopHat.svg?columns=all)](https://waffle.io/LazySamir/Acebook-EagleWithTopHat)
 
 [![Build Status](https://travis-ci.org/LazySamir/Acebook-EagleWithTopHat.svg?branch=master)](https://travis-ci.org/LazySamir/Acebook-EagleWithTopHat)
+
+##### Acebook Frontend Repository
+[https://github.com/LondonJim/acebook-frontend-eaglewithtophat ]()
 
 ## The Mission
 Create a clone of a well-known social media platform using Rails.
@@ -31,12 +34,56 @@ $ rake db:drop db:create db:migrate
 ```
 $ rails server
 ```
+-
 
 ### How do I use it?
-- go to localhost:3000/posts
-- click 'New post' link
-- enter message body in the text box and press submit
-- see all current posts in chronological order
+There are currently two options to use this API, remotely and locally.
+
+#### Local
+- Run `rails server`
+- Use `LOCALHOST:3000` within your client
+
+#### Remote
+- Use the url: `https://acebook-eaglewithtophat.herokuapp.com`
+
+
+#### How to make calls
+
+##### Sign up
+Make a `POST` request to `/users`
+
+Accepts the following format:
+
+```
+{ 
+ "user" : {
+        "full_name": "Test Name",
+        "email": "abcde@cd.com",
+        "password": "123456",
+        "password_confirmation": "123456"
+    }
+ }
+```
+
+##### View Posts
+Make a `GET` request to `/posts`
+
+
+##### Create a Post
+Make a `POST` request to `/posts`
+
+Accepts the following format:
+
+```
+{ 
+ "post" : {
+        "user_id": 1,
+        "message": "test message",
+    }
+ }
+```
+-
+
 
 ## User Stories
 ```
@@ -108,11 +155,11 @@ I want to be able to comment on posts
 | id | user_id | post_id | body | created_on |
 +----+---------+---------+------+------------+
 
-+--------------------------------------------+
-|                    Users                   |
-+--------------------------------------------+
-| id | handle | full_name | email | password |
-+----+--------+-----------+-------+----------+
++-----------------------------------+
+|                    Users          |
++-----------------------------------+
+| id | full_name | email | password |
++----+-----------+-------+----------+
 
 +-----------------------------------------------+
 |                     Posts                     |
