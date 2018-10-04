@@ -7,14 +7,15 @@ RSpec.describe "Acebook posts API", type: :request do
   # end
 
   describe 'GET /posts' do
-    scenario "user can receive json response"
-    before { get '/posts' }
+    context "user can receive json response" do
+      before { get '/posts' }
 
-    it "returns http status :200" do
-      expect(response).to have_http_status(200) # :okay
-    end
-    it "return content_type application/json" do
-      expect(response.content_type).to eq("application/json")
+      it "returns http status :200" do
+        expect(response).to have_http_status(200) # :okay
+      end
+      it "return content_type application/json" do
+        expect(response.content_type).to eq("application/json")
+      end
     end
   end
 
