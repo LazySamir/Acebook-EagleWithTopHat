@@ -7,9 +7,10 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = Comment.create(message: params[:message], user_id: current_user.id, post_id: params[:post_id])
+    @comment = Comment.create(message: params[:message],
+                              user_id: current_user.id,
+                              post_id: params[:post_id])
     redirect_to posts_url
   end
-
 
 end
