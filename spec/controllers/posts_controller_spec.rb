@@ -14,9 +14,7 @@ RSpec.describe PostsController, type: :controller do
   end
 
   describe "POST /" do
-
     it "creates a post" do
-
       post :create, params: { post: { message: "Hello, world!", user_id: @user.id} }
       testpost = Post.find_by(message: "Hello, world!")
       expect(testpost.message).to eq("Hello, world!")
