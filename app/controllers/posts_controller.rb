@@ -1,17 +1,16 @@
 class PostsController < ApplicationController
-  # before_action :authenticate_user!
 
-  def new
-    @post = Post.new
+  def new(post = Post.new)
+    @post = post
   end
 
-  def create
-    @post = Post.create(message: post_params[:message], user_id: post_params[:user_id])
+  def create(post = Post.create(message: post_params[:message], user_id: post_params[:user_id]))
+    @post = post
     render json: @post
   end
 
-  def index
-    @posts = Post.all
+  def index(posts = Post.all)
+    @posts = posts
     render json: @posts
   end
 
